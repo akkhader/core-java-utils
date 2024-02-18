@@ -3,7 +3,6 @@ package com.khader.utils.corejavautils.asyn;
 import com.khader.utils.corejavautils.asyn.dto.WaybillUpdateResponse;
 import com.khader.utils.corejavautils.asyn.dto.WaybillUpdateResult;
 import com.khader.utils.corejavautils.asyn.service.WaybillService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +11,7 @@ import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
 
 @Service
-public class MyService {
+public class UpdateWaybillStatusService {
 
 //    @Autowired
     private WaybillService waybillService; // Assume you have a WaybillService to perform the update

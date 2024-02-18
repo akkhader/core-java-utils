@@ -11,10 +11,10 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 
 @RestController
-public class MyController {
+public class UpdateWaybillStatusController {
 
     @Autowired
-    private MyService myService;
+    private UpdateWaybillStatusService myService;
 
     @PostMapping("/update-waybills")
     public WaybillUpdateResponse updateWaybills(@RequestBody List<String> waybillNumbers) throws ExecutionException, InterruptedException {
