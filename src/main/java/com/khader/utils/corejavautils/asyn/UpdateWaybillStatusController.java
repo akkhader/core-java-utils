@@ -17,8 +17,8 @@ public class UpdateWaybillStatusController {
     private UpdateWaybillStatusService myService;
 
     @PostMapping("/update-waybills")
-    public WaybillUpdateResponse updateWaybills(@RequestBody List<String> waybillNumbers) throws ExecutionException, InterruptedException {
-        CompletableFuture<WaybillUpdateResponse> result = myService.updateWaybills(waybillNumbers);
+    public WaybillUpdateResponse callServiceAsynWithList(@RequestBody List<String> waybillNumbers) throws ExecutionException, InterruptedException {
+        CompletableFuture<WaybillUpdateResponse> result = myService.callServiceAsynWithList(waybillNumbers);
         return result.get(); // This blocks until all waybills are updated
     }
 }

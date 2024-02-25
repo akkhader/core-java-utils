@@ -17,7 +17,7 @@ public class UpdateWaybillStatusService {
     private WaybillService waybillService; // Assume you have a WaybillService to perform the update
 
     @Async
-    public CompletableFuture<WaybillUpdateResponse> updateWaybills(List<String> waybillNumbers) {
+    public CompletableFuture<WaybillUpdateResponse> callServiceAsynWithList(List<String> waybillNumbers) {
         List<CompletableFuture<WaybillUpdateResult>> futures = waybillNumbers.parallelStream()
                 .map(waybillNumber -> CompletableFuture.supplyAsync(() -> waybillService.updateWaybillStatus(waybillNumber)))
                 .collect(Collectors.toList());
